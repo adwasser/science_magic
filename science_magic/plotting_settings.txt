@@ -1,4 +1,4 @@
-set_dict = dict(context='poster', style='ticks', font_scale=1,
+set_dict = dict(context='poster', style='ticks', font_scale=1.5,
                 color_codes=True, palette='deep')
 rc = {{'savefig.bbox': 'tight',
       'figure.figsize': (9, 6),
