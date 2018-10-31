@@ -22,11 +22,17 @@ Otherwise, you can load the extension manually with the magic command `%load_ext
 ```python
 import numpy as np
 import pandas as pd
+from scipy import integrate
+from scipy import optimize
+from scipy import stats
+from scipy import special
+
 from astropy.coordinates import SkyCoord
 from astropy.table import Table
 from astropy.io import fits
 from astropy import units as u
 from astropy import constants as c
+
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -44,7 +50,7 @@ and the following seaborn settings:
 ```
 context = poster
 style = ticks
-font_scale = 1.0
+font_scale = 1.5
 color_codes = True
 palette = deep
 ```
