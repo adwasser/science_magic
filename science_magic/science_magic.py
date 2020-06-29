@@ -14,9 +14,19 @@ class ScienceMagic(Magics):
         ns = self.shell.user_ns
         print(s)
         exec(s, ns)
-        self.astro(line)
+        # self.astro(line)
+        self.stats(line)
         self.plotting(line)
 
+    @line_magic
+    def stats(self, line):
+        from . import stats_imports
+        with open(inspect.getfile(stats_imports)) as f:
+            s = f.read()
+        ns = self.shell.user_ns
+        print(s)
+        exec(s, ns)
+        
     @line_magic
     def astro(self, line):
         """Import statements"""
@@ -35,17 +45,4 @@ class ScienceMagic(Magics):
             s = f.read()
         ns = self.shell.user_ns
         print(s)
-        exec(s, ns)
-
-        if line is None:
-            new_rc = {}
-        else:
-            new_rc = line
-        install_dir = os.path.split(inspect.getfile(plotting_imports))[0]
-        filename = install_dir + '/plotting_settings.txt'
-        with open(filename) as f:
-            s = f.read()
-        s = s.format(new_rc.__str__())
-
-        ns = self.shell.user_ns
         exec(s, ns)

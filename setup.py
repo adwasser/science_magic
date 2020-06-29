@@ -11,5 +11,6 @@ setup(
     packages=find_packages(exclude=[]),
     include_package_data=True,
     install_requires=[
-        "numpy", "pandas", "astropy", "matplotlib", "seaborn", "ipython"
+        "numpy", "pandas", "xarray", "astropy", "matplotlib", "seaborn", "ipython",
+        "statsmodels", "patsy", "arviz", "cmdstanpy",
     ])
